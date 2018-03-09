@@ -9,12 +9,17 @@ public class Demo {
         System.setProperty("webdriver.chrome.driver","drivers//chromedriver");
         WebDriver browser = new ChromeDriver();
         browser.get("https://www.netflix.com/co/login");
+        //browser.get(By.xpath(String.valueOf("//*[@id=\'formstart\']/button")));
+
         //browser.findElement(By.className("ui-text-input")).sendKeys("carolina");
         //browser.findElement(By.cssSelector(".login-input-email input")).sendKeys("dcmachadou@gmail.com");
-        browser.findElement(By.cssSelector(".login-input-email input:first-of-type")).sendKeys("dcmachadou@gmail.com");
 
-        browser.findElement(By.cssSelector("input[type='password']")).sendKeys("gabriel1031");
+
+        /*browser.findElement(By.cssSelector(".login-input-email input:first-of-type")).sendKeys("dcmachadou@gmail.com");
+        browser.findElement(By.cssSelector("input[type='password']")).sendKeys("gabriel1031");*/
         browser.findElement(By.cssSelector(".login-button")).click();
+
+        System.out.println(browser.findElement(By.cssSelector("#lbl-password .input-message")).getText());
 
         //browser.quit();
         //System.out.println(browser.getTitle());
